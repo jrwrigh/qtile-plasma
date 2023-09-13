@@ -61,7 +61,7 @@ class Plasma(Layout):
         clone.add_mode = None
         return clone
 
-    def add(self, client):
+    def add_client(self, client):
         node = self.root if self.focused_node is None else self.focused_node
         new = Node(client)
         try:
@@ -126,11 +126,11 @@ class Plasma(Layout):
     def refocus(self):
         self.group.focus(self.focused)
 
-    def cmd_next(self):
+    def next(self):
         """Focus next window."""
         self.focus_node(self.focused_node.next_leaf)
 
-    def cmd_previous(self):
+    def previous(self):
         """Focus previous window."""
         self.focus_node(self.focused_node.prev_leaf)
 
